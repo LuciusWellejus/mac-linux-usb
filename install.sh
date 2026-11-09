@@ -33,4 +33,8 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw enable
 
+# Installer Lutris, Calibre og Obsidian til spil, bøger og noter
+echo "Installing Lutris, Calibre, and Obsidian..."
+sudo pacman -S lutris calibre obsidian --noconfirm
+
 echo "Configuration deployment finalized successfully with security layers enabled."
