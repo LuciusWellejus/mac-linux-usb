@@ -80,6 +80,12 @@ sudo pacman -S zed
    nvim
    ```
 
+### Step 6: Deploy Repository Configurations
+After installing all the core system packages, execute the deployment script included in this repository to automatically link all window manager and terminal configurations to your user environment:
+```bash
+chmod +x install.sh
+./install.sh
+```
 ---
 
 ## Graphical Customization and Environment Tweak Targets
