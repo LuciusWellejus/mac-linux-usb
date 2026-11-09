@@ -1,4 +1,3 @@
-# mac-linux-usb
 # My M2 Mac Linux Environment (USB-C Drive Setup)
 
 This repository documents the comprehensive configuration and deployment steps for a custom Linux development environment. The entire operating system resides within a UTM Virtual Machine stored on an external 128 GB USB-C flash drive, ensuring the internal storage of the host M2 MacBook Air remains unaffected.
@@ -12,6 +11,11 @@ This repository documents the comprehensive configuration and deployment steps f
 - Status Panel: Waybar
 - Primary Editors: Zed (Graphical User Interface) and Neovim with LazyVim (Terminal)
 - Web Browser: Zen Browser (Privacy-focused Firefox fork)
+- Network Firewall: UFW (Uncomplicated Firewall)
+- Gaming Platform: Lutris
+- E-Book Management: Calibre
+- Knowledge Base and Notes: Obsidian
+- Local AI Engine: Ollama
 
 ---
 
@@ -43,8 +47,8 @@ Follow the configuration prompts to establish the core system parameters:
 - Choose the Minimal system profile to prevent the installation of unnecessary desktop packages, allowing a clean manual build.
 - Conclude the script, shut down the system, unmount the installation ISO, and boot into the new installation.
 
-### Step 4: Install Hyprland and Interface Utilities
-Log into the fresh Arch Linux installation and run the package manager to fetch the Wayland compositor, status indicators, and display security tools:
+### Step 4: Install Core Environment Utilities
+Log into the fresh Arch Linux installation and run the package manager to fetch the Wayland compositor, status indicators, display security tools, and git:
 ```bash
 sudo pacman -Syu
 sudo pacman -S hyprland waybar hyprlock kitty rofi-wayland fastfetch git
@@ -80,12 +84,13 @@ sudo pacman -S zed
    nvim
    ```
 
-### Step 6: Deploy Repository Configurations
-After installing all the core system packages, execute the deployment script included in this repository to automatically link all window manager and terminal configurations to your user environment:
+### Step 6: Deploy Repository Configurations and Applications
+After configuring the core editors, clone this repository inside your Arch Linux environment, navigate into the directory, and execute the automated deployment script. This will link your configuration files, activate the UFW firewall rules, and automatically install Ollama, Lutris, Calibre, and Obsidian:
 ```bash
 chmod +x install.sh
 ./install.sh
 ```
+
 ---
 
 ## Graphical Customization and Environment Tweak Targets
