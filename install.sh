@@ -20,4 +20,17 @@ cp .config/hypr/hyprland.conf "$TARGET_DIR/hypr/hyprland.conf"
 echo "Deploying Hyprlock security configurations..."
 cp .config/hypr/hyprlock.conf "$TARGET_DIR/hypr/hyprlock.conf"
 
-echo "Configuration deployment finalized successfully."
+# Install and enable Ollama locally inside Linux
+echo "Installing Ollama AI engine inside Linux..."
+sudo pacman -S ollama --noconfirm
+sudo systemctl enable --now ollama
+
+# Privacy & Security Layer: Install and configure UFW Firewall
+echo "Deploying UFW Firewall and securing network ports..."
+sudo pacman -S ufw --noconfirm
+sudo systemctl enable --now ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+
+echo "Configuration deployment finalized successfully with security layers enabled."
